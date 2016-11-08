@@ -3,9 +3,17 @@ function addMoreFields() {
   index++;
   var objTo = document.getElementById('content');
   var divtest = document.createElement('div');
-  divtest.innerHTML = '<label for="page_id_' + index + '">Page id</label> <div class="form-group"><input type="text" class="form-control" name="page_id[]" value="" /></div>';
+  divtest.innerHTML = '<label for="page_ids_' + index + '">Page id</label> <div class="form-group"><input type="text" class="form-control" name="page_ids[]" value="" /></div>';
 
   objTo.appendChild(divtest)
+}
+
+function formatData(data) {
+  var result = "user_id, page_id, post_id, post_type, interaction_type, interaction_sub_type\n";
+  $.each(data, function(index, value){
+    result += '' + value['user_id'] + ',' + value['page_id'] + ',' + value['post_id'] + ',' + value['post_type'] + ',' + value['interaction_type'] + ',' + value['interaction_sub_type'] + "\n";
+  });
+  return result;
 }
 
 var ready = function() {
@@ -17,10 +25,10 @@ var ready = function() {
         url: $(this).attr('action'),
         data: valuesToSubmit,
         dataType: 'JSON'
-      }).success(function(json){
-        console.log('success', json);
+      }).success(function(data){
+        console.log('success', data);
         $('#interactions').show();
-        $('#interactions p').html(JSON.stringify(json));
+        $('#interactions p').html(formatData(data));
       });
       return false;
     }

@@ -8,13 +8,13 @@
 
     <%= label_tag 'Page ID' %>
     <div class="form-group">
-      <%= text_field_tag 'page_id[]', nil, class: 'form-control' %>
+      <%= text_field_tag 'page_ids[]', nil, class: 'form-control' %>
     </div>
   </div>
 
-  <%= label_tag 'csv' %>
   <div class="form-group">
     <%= check_box_tag 'csv', class: 'form-control' %>
+    <%= label_tag 'Export to CSV?' %>
   </div>
 
   <%= link_to 'Add another page', "javascript:addMoreFields();", class: 'btn btn-primary' %>

@@ -5,18 +5,18 @@ class PagesController < ApplicationController
   end
 
   def query
-    resulted_data = []
+    interaction_data = []
 
-    if params[:page_id].present?
-      fb_interactions = Fb::Inspector::Interactions.new(params[:page_id], params[:posts_limit])
-      resulted_data = fb_interactions.get_interactions
+    if params[:page_ids].present?
+      fb_interactions = Fb::Inspector::Interactions.new(params[:page_ids], params[:posts_limit])
+      interaction_data = fb_interactions.get_interactions
     end
 
     request.format = :csv if params[:csv]
 
     respond_to do |format|
-      format.json { render json: { resulted_data: resulted_data } }
-      format.csv { send_data(format_csv(resulted_data)) }
+      format.json { render json: interaction_data }
+      format.csv { send_data(format_csv(interaction_data)) }
     end
   end
 
