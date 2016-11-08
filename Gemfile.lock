@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/wazery/fb_inspector.git
+  revision: 60563319eb91dcff8a7703989a07158614fff26b
+  specs:
+    fb-inspector (0.1.0)
+      koala
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -183,6 +190,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.4.1)
   byebug (= 4.0.5)
   coffee-rails (= 4.1.0)
+  fb-inspector!
   figaro (= 1.1.0)
   jquery-rails (= 4.0.3)
   koala (~> 2.2)
