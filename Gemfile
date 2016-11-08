@@ -8,26 +8,19 @@ gem 'uglifier', '2.7.1'
 gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '4.0.3'
 gem 'turbolinks', '2.5.3'
-gem 'jbuilder', '2.2.13'
 gem 'bcrypt', '3.1.10'
 
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
-
-# Kaminari: https://github.com/amatsuda/kaminari
-gem 'kaminari', '0.16.3'
-
-# Friendly_id: https://github.com/norman/friendly_id
-gem 'friendly_id', '5.1.0'
-
-# Font-awesome: https://github.com/FortAwesome/font-awesome-sass
-gem 'font-awesome-sass', '4.3.2.1'
 
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.4.1'
 
 # Facebook Graph API Ruby library
 gem 'koala', '~> 2.2'
+
+# PostgreSQL
+gem 'pg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
