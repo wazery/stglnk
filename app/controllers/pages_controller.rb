@@ -25,8 +25,9 @@ class PagesController < ApplicationController
 
           comments = @graph.get_connections(post['id'], 'comments')
           comments.each do |comment|
-            resulted_data.push(user_id: comment['from']['id'], page_id: page_id, post_id: post['id'],
-                               post_type: post['type'], interaction_type: 'comment', interaction_sub_type: '')
+            resulted_data.push(user_id: comment['from']['id'], page_id: page_id,
+                               post_id: post['id'], post_type: post['type'],
+                               interaction_type: 'comment', interaction_sub_type: '')
           end
         end
       end
@@ -43,7 +44,9 @@ class PagesController < ApplicationController
   private
 
   def format_csv(data)
-    CSV.generate({}) do |csv|
+    return if data.empty?
+
+    csv_file = CSV.generate({}) do |csv|
       csv << data.first.keys # Adds the attributes name on the first line
       data.each do |hash|
         csv << hash.values
