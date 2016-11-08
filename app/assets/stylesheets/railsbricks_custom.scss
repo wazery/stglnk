@@ -9,7 +9,7 @@ $brand-danger: #d9534f;
 $brand-info: #5bc0de;
 
 // Body scaffolding
-$body-bg: #ffffff;
+$body-bg: #f9f9f9;
 $text-color: #373737;
 $link-color: $brand-primary;
 $link-hover-color: darken($link-color, 15%);
@@ -136,7 +136,7 @@ $navbar-border-radius: 0px;
 // Navbar: Default navbar
 // -> Basics
 $navbar-default-color: #777777;
-$navbar-default-bg: #f8f8f8;
+$navbar-default-bg: white;
 $navbar-default-border: darken($navbar-default-bg, 7%);
 // -> Links
 $navbar-default-link-color: #777777;
@@ -324,8 +324,8 @@ $hr-border: #cccccc; // Horizontal line color
 $component-offset-horizontal: 180px; // Horizontal offset for forms and lists
 
 //***********************************************************
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 //***********************************************************
 // CLASSES FOR VISUAL TESTING
@@ -451,7 +451,7 @@ $space-xs: 10px;
 //***********************************************************
 // NAVBAR
 .navbar-brand {
-  font-size: inherit;
+  font-size: 2rem;
 }
 //***********************************************************
 
@@ -513,35 +513,17 @@ img {
 //***********************************************************
 
 //***********************************************************
-// VIDEO
-.js-video {
-  height: 0;
-  padding-top: 25px;
-  padding-bottom: 67.5%;
-  margin-bottom: 10px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 3px 3px 5px #cccccc;
-  border: 3px solid #373737;
-
+// HEADER
+header {
+  height: 5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
 }
 
-.js-video.widescreen {
-  padding-bottom: 57.25%;
+h1 {
+  font-size: 4rem;
+  line-height: 2.5rem;
+  letter-spacing: -1px;
 }
-
-.js-video.vimeo {
-  padding-top: 0;
-}
-
-.js-video embed, .js-video iframe, .js-video object, .js-video video {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-//***********************************************************
 
 #interactions p {
   background-color: #f1f1f1;
@@ -551,10 +533,10 @@ img {
 //***********************************************************
 // FOOTER
 #footer {
-  background-color: #ffffff;
-  color: #373737;
-  height: 100px;
-  margin-top: -100px;
+  background-color: #000000;
+  color: #dadada;
+  height: 75px;
+  margin-top: -75px;
   letter-spacing: 1px;
 
   .footer-first-row {

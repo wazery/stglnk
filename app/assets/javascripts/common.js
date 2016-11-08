@@ -3,7 +3,7 @@ function addMoreFields() {
   index++;
   var objTo = document.getElementById('content');
   var divtest = document.createElement('div');
-  divtest.innerHTML = '<p><span><label for="page_id_' + index + '">Page id</label> <input type="text" name="page_id[]" value="" /></span></p>';
+  divtest.innerHTML = '<label for="page_id_' + index + '">Page id</label> <div class="form-group"><input type="text" class="form-control" name="page_id[]" value="" /></div>';
 
   objTo.appendChild(divtest)
 }

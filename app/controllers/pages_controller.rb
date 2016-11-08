@@ -1,36 +1,15 @@
 class PagesController < ApplicationController
-  require 'koala'
   require 'csv'
 
   def home
   end
 
   def query
-    # TODO: Move this to a lib class
-    @graph = Koala::Facebook::API.new(ENV['GRAPH_API_ACCESS_TOKEN'], ENV['GRAPH_API_APP_SECRET'])
     resulted_data = []
 
     if params[:page_id].present?
-      params[:page_id].delete_if(&:blank?) # Removes empty strings, if any.
-      params[:page_id].each do |page_id|
-        page_feed = @graph.get_connections(page_id, 'feed', limit: params[:posts_limit])
-
-        page_feed.each do |post|
-          reactions = @graph.get_connections(post['id'], 'reactions')
-          reactions.each do |reaction|
-            resulted_data.push(user_id: reaction['id'], page_id: page_id, post_id: post['id'],
-                               post_type: post['type'], interaction_type: 'reaction',
-                               interaction_sub_type: reaction['type'])
-          end
-
-          comments = @graph.get_connections(post['id'], 'comments')
-          comments.each do |comment|
-            resulted_data.push(user_id: comment['from']['id'], page_id: page_id,
-                               post_id: post['id'], post_type: post['type'],
-                               interaction_type: 'comment', interaction_sub_type: '')
-          end
-        end
-      end
+      fb_interactions = Fb::Inspector::Interactions.new(params[:page_id], params[:posts_limit])
+      resulted_data = fb_interactions.get_interactions
     end
 
     request.format = :csv if params[:csv]
