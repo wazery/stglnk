@@ -1,2 +1,21 @@
-<% title("Home Page") %>
-<h1><i class="fa fa-home"></i> Home Page <small>views/pages/home.html.erb</small></h1>
+<% title('Stglnk Facebook Interaction Inspector') %>
+<h1><i class="fa fa-home"></i> Stglnk Facebook Interaction Inspector</h1>
+
+<%= form_tag '/query', id: 'query_form', method: :post do %>
+  <div id="content">
+    <p>
+    <%= label_tag 'Posts Number' %> <%= text_field_tag 'posts_limit', nil, size: 4 %>
+    <%= label_tag 'csv' %> <%= check_box_tag 'csv' %>
+    </p>
+    <p><%= label_tag 'Page ID' %> <%= text_field_tag 'page_id[]' %></p>
+  </div>
+  <p>
+    <%= link_to 'Add another page', "javascript:addMoreFields();", class: 'btn btn-primary' %>
+    <%= submit_tag 'Get Interactions', id: 'submitButton', class: 'btn btn-success' %>
+  </p>
+<% end %>
+
+<div id="interactions" style="display: none;">
+  <h2>Results</h2>
+  <p></p>
+</div>
