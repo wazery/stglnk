@@ -1,14 +1,18 @@
 <br>
 <%= form_tag '/query', id: 'query_form', method: :post do %>
   <div id="content">
-    <%= label_tag 'Posts Number' %>
-    <div class="form-group">
-      <%= text_field_tag 'posts_limit', nil, class: 'form-control', size: 4 %>
+    <div class="col-sm-6">
+      <%= label_tag 'Page ID' %>
+      <div class="form-group">
+        <%= text_field_tag 'page_ids[]', nil, class: 'form-control' %>
+      </div>
     </div>
 
-    <%= label_tag 'Page ID' %>
-    <div class="form-group">
-      <%= text_field_tag 'page_ids[]', nil, class: 'form-control' %>
+    <div class="col-sm-6">
+      <%= label_tag 'Posts Number' %>
+      <div class="form-group">
+        <%= text_field_tag 'posts_limit[]', nil, class: 'form-control', size: 4 %>
+      </div>
     </div>
   </div>
 
