@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/wazery/fb_inspector.git
-  revision: 60563319eb91dcff8a7703989a07158614fff26b
+  revision: 05dd9894e41a1715261005b3cae715b1f6984453
   specs:
     fb-inspector (0.1.0)
       koala
