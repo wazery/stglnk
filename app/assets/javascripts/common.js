@@ -9,9 +9,15 @@ function addMoreFields() {
 }
 
 function formatData(data) {
-  var result = "user_id, page_id, post_id, post_type, interaction_type, interaction_sub_type\n";
-  $.each(data, function(index, value){
-    result += '' + value['user_id'] + ',' + value['page_id'] + ',' + value['post_id'] + ',' + value['post_type'] + ',' + value['interaction_type'] + ',' + value['interaction_sub_type'] + "\n";
+  var result = "user_id, page_id, post_id, post_type, interaction_type, interaction_sub_type, person_tagged_name\n";
+  $.each(data[0], function(i, v) {
+    $.each(v, function(index, value) {
+      if (value) {
+        result += '' + value['user_id'] + ',' + value['page_id'] + ',' + value['post_id']
+          + ',' + value['post_type'] + ',' + value['interaction_type'] + ','
+          + (value['interaction_sub_type'] || '') + ',' + (value['person_tagged_name'] || '') + "\n";
+      }
+    });
   });
   return result;
 }

@@ -22,7 +22,7 @@
   </div>
 
   <%= link_to 'Add another page', "javascript:addMoreFields();", class: 'btn btn-primary' %>
-  <%= submit_tag 'Get Interactions', id: 'submitButton', class: 'btn btn-success' %>
+  <%= submit_tag 'Get Interactions', name: 'interactions', id: 'submitButton', class: 'btn btn-success' %>
 <% end %>
 
 <div id="interactions" style="display: none;">

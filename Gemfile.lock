@@ -1,8 +1,7 @@
-GIT
-  remote: git://github.com/wazery/fb_inspector.git
-  revision: 05dd9894e41a1715261005b3cae715b1f6984453
+PATH
+  remote: /Users/islamwazery/Workspace/stglnk/xystra
   specs:
-    fb-inspector (0.1.0)
+    xystra (0.1.0)
       koala
 
 GEM
@@ -190,7 +189,6 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.4.1)
   byebug (= 4.0.5)
   coffee-rails (= 4.1.0)
-  fb-inspector!
   figaro (= 1.1.0)
   jquery-rails (= 4.0.3)
   koala (~> 2.2)
@@ -205,6 +203,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (= 2.7.1)
   web-console (= 2.1.2)
+  xystra!
 
 RUBY VERSION
    ruby 2.2.3p173
