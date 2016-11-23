@@ -25,7 +25,7 @@ gem 'pg'
 # For Heroku assets generation
 gem 'rails_12factor', group: :production
 
-gem 'xystra', path: '/Users/islamwazery/Workspace/stglnk/xystra'
+gem 'xystra', github: 'wazery/xystra'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
